@@ -21,8 +21,8 @@ My objective is to build a scalable, interpretable, and accurate ML-based fraud 
 - **Files Used:** `train_transaction.csv`, `train_identity.csv`
 - **Size:** ~590,000 records, 434 features after merging
 - **Imbalance:** Only ~3.5% transactions are labeled as fraud
-train_transaction.csv : https://www.kaggle.com/c/ieee-fraud-detection/data?select=train_transaction.csv
-train_identity.csv : https://www.kaggle.com/c/ieee-fraud-detection/data?select=train_identity.csv
+- train_transaction.csv : https://www.kaggle.com/c/ieee-fraud-detection/data?select=train_transaction.csv
+- train_identity.csv : https://www.kaggle.com/c/ieee-fraud-detection/data?select=train_identity.csv
 
 ---
 
@@ -43,11 +43,14 @@ train_identity.csv : https://www.kaggle.com/c/ieee-fraud-detection/data?select=t
 ### Modeling Strategy
 
 - Models Evaluated:
-  - Logistic Regression (with/without SMOTE)
-  - Random Forest (all + selected features)
-  - XGBoost
-  - LightGBM (baseline + tuned)
-  - Deep Neural Network (100 & 400 epochs)
+  SMOTE
+   - Logistic Regression (with/without SMOTE)
+   - Random Forest (all + selected features)
+  Stratified Sampling
+   - XGBoost
+   - LightGBM (baseline + tuned) using Stratified Sampling
+   - Deep Neural Network (100 & 400 epochs) using Stratified Sampling
+     
 - Highlights:
   - SMOTE oversampling
   - Stratified Sampling
@@ -63,6 +66,10 @@ train_identity.csv : https://www.kaggle.com/c/ieee-fraud-detection/data?select=t
 - Improves recall, reduces overfitting
 
 ---
+### Stratified Sampling
+- Maintains the same fraud-to-non-fraud ratio in train/test sets
+- Ensures consistent evaluation without data leakage
+- This dataset have only 3.5% fraud
 
 ### Feature Selection
 
@@ -75,6 +82,7 @@ train_identity.csv : https://www.kaggle.com/c/ieee-fraud-detection/data?select=t
 ## Evaluation Metrics
 - Focused on recall to catch as many frauds as possible
 
+![image](https://github.com/user-attachments/assets/41c413b4-6741-438a-89cd-36f198834d8c)
 
 ## Observations:
 - Random Forest performs well but struggles with recall.
