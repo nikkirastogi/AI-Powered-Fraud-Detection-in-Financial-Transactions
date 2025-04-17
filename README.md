@@ -125,18 +125,6 @@ This project includes a Streamlit web app to interactively test the fraud detect
    - Enter transaction details in the sidebar
    - Get prediction and probability of fraud
 
-### 📁 App Folder Structure
-
-```
-.
-├── app.py                        # Streamlit app interface
-├── model/
-│   ├── fraud_model.pkl           # Trained classifier (e.g., XGBoost)
-│   └── scaler.pkl                # StandardScaler used in preprocessing
-├── requirements.txt             # App dependencies
-└── README.md
-```
-
 ---
 
 ## Contact
