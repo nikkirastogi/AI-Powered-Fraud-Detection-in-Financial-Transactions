@@ -32,7 +32,7 @@ My objective is to build a scalable, interpretable, and accurate ML-based fraud 
 - Removed features with >20% missing values
 - Imputed remaining missing values (Median for numeric, Mode for categorical)
 - Removed low-variance features (>90% single value)
-- Final shape: 590540 × 182
+- Final shape: 590540 × 106
 - One-hot encoded categorical variables
 - Scaled numerical features using `StandardScaler`
 - Balanced the training set using **SMOTE**
